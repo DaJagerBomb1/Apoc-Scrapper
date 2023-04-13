@@ -9,6 +9,7 @@ public class TurretAI : MonoBehaviour, IDamage
     [SerializeField] Renderer model;
     [SerializeField] Transform headPos;
     [SerializeField] Transform shootPos;
+    [SerializeField] Transform shootPos2;
     //[SerializeField] Rigidbody rigidBody;
 
     [Header("----- Enemy Stats -----")]
@@ -98,13 +99,15 @@ public class TurretAI : MonoBehaviour, IDamage
     IEnumerator Shoot()
     {
         isShooting = true;
-        
+
         // this creates a reference to an instantiated bullet, first parameter = what youre instantiating, second = where it's instantiating from on the enemy
         // (which we'll set in unity), third = the bullets orientation (doesn't really matter but it's necessary)
         GameObject bulletClone = Instantiate(TurretBullet, shootPos.position, TurretBullet.transform.rotation);
+        GameObject bulletClone2 = Instantiate(TurretBullet, shootPos2.position, TurretBullet.transform.rotation);
 
         // this will set the bullets velocity via the rigidbody component of the game object
         bulletClone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+        bulletClone2.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
 
         // our wait time which is going to be our defined shootRate
         yield return new WaitForSeconds(shootRate);

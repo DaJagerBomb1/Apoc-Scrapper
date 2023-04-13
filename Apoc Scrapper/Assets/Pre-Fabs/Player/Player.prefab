@@ -356,9 +356,9 @@ MonoBehaviour:
   salvageRange: 10
   salvageRate: 2.32
   thrustPower: 8
-  fuelConsumptionRate: 0.42
-  fuelRefillRate: 0.072
-  timeToTurnOffFuelBar: 29
+  fuelConsumptionRate: 0.35
+  fuelRefillRate: 0.031
+  timeToTurnOffFuelBar: 5
   gunList: []
   shootDamage: 4
   shootRate: 0.4
