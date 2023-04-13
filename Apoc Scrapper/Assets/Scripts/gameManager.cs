@@ -11,12 +11,14 @@ public class gameManager : MonoBehaviour
     [Header("----- Player Stuff -----")]
     public GameObject player;
     public playerController playerScript;
+    public GameObject playerSpawnPos;
 
     [Header("----- UI Stuff -----")]
     public GameObject activeMenu;
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject loseMenu;
+    public GameObject checkpointMenu;
     public Image HPBar;
     public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI salvageCollected;
@@ -45,6 +47,7 @@ public class gameManager : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
+        playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
     }
 
