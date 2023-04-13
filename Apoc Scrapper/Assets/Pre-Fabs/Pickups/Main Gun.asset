@@ -15,5 +15,5 @@ MonoBehaviour:
   shootDamage: 1
   shootRate: 2
   shootDistance: 500
-  model: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
+  model: {fileID: 131900, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
   gunShot: {fileID: 0}

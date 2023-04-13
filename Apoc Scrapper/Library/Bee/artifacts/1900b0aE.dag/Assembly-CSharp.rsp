@@ -360,6 +360,7 @@
 "Assets/Scripts/ratAI.cs"
 "Assets/Scripts/salvageableObject.cs"
 "Assets/Scripts/ShieldStats.cs"
+"Assets/Scripts/SREMDStats.cs"
 "Assets/Scripts/TurretAI.backup.cs"
 "Assets/Scripts/TurretAI.cs"
 "Assets/Scripts/TurretBullet.cs"
