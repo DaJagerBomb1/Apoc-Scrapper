@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf0899432a160b4db56f687e0240efb, type: 3}
-  m_Name: Main Gun
+  m_Script: {fileID: 11500000, guid: 47ff344027100f24693f1d3bbc2f6a04, type: 3}
+  m_Name: SREMDStats
   m_EditorClassIdentifier: 
-  shootDamage: 999
-  shootRate: 0.1
-  shootDistance: 999
-  model: {fileID: 131900, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
-  gunShot: {fileID: 0}
+  sremdHealth: 0
+  sremdBlocked: 0
+  sremdRadius: 0
+  model: {fileID: 0}
+  pickupSound: {fileID: 0}
+  throwSound: {fileID: 0}
+  explodeSound: {fileID: 0}

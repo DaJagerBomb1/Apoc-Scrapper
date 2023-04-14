@@ -7,6 +7,7 @@ using TMPro;
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
+    
 
     [Header("----- Player Stuff -----")]
     public GameObject player;
@@ -18,6 +19,7 @@ public class gameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject loseMenu;
+    public GameObject RSGSplash;
     public GameObject checkpointMenu;
     public Image HPBar;
     public TextMeshProUGUI enemiesRemainingText;
@@ -45,12 +47,33 @@ public class gameManager : MonoBehaviour
     {
         instance = this;
         
+        StartCoroutine(SplashScreen());
+        
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<playerController>();
         playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOriginal = Time.timeScale;
     }
+    IEnumerator SplashScreen()
+    {
+        
+        
+            activeMenu = RSGSplash;
+            RSGSplash.SetActive(true);
+            yield return new WaitForSeconds(2);
+            /*activeMenu=controlsMenu;
+             yield return new WaitForSeconds(2);
 
+             activeMenu=storyMenu;
+             yield return new WaitForSeconds(2);
+
+             */
+            RSGSplash.SetActive(false);
+            activeMenu = null;
+        
+        
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -72,7 +95,7 @@ public class gameManager : MonoBehaviour
 
 
     }
-
+    
     public void PauseState()
     {
         Time.timeScale = 0;

@@ -58,7 +58,7 @@ public class playerController : MonoBehaviour, IDamage, ISalvageable
         {
             SelectGun();
             Movement();
-            if (/*gunList.Count > 0 && */Input.GetButton("Shoot") && !isShooting)
+            if (gunList.Count > 0 && Input.GetButton("Shoot") && !isShooting)
                 StartCoroutine(Shoot());
 
             if (!isSalvaging && Input.GetButton("Salvage"))
@@ -79,7 +79,7 @@ public class playerController : MonoBehaviour, IDamage, ISalvageable
             ISalvageable salvageable = hit.collider.GetComponent<ISalvageable>();
 
             // if the above^ has the component ISalvageable (i.e. it's not null)
-            if (salvageable != null)
+            if (salvageable != null&&hit.collider.tag!="Player")
             {
                 // change the reticle to salvageable reticle
                 gameManager.instance.CueSalvageableReticle();
@@ -184,18 +184,23 @@ public class playerController : MonoBehaviour, IDamage, ISalvageable
 
         RaycastHit hit;
 
-        if(Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, salvageRange))
+
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, salvageRange))
         {
+
+            
             // if the object we clicked on contains the ISalvageable interface
             ISalvageable salvageable = hit.collider.GetComponent<ISalvageable>();
 
-             // if the object is salvageable
+            // if the object is salvageable
             if (salvageable != null)
             {
                 SalvageObject(hit.collider.gameObject);
             }
-        }
 
+
+
+        }
         yield return new WaitForSeconds(salvageRate);
 
         isSalvaging = false;
