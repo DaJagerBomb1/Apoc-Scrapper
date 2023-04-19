@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Liam Scene.unity
+- path: Assets/Scenes/Gabriel Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
